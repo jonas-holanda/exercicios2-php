@@ -28,37 +28,39 @@
                     <?php
                         
                         if (!empty($_POST)) :
-                     
-                        $resultado = "";
-                        $arrayRand = [];      
-                        for ($i=1; $i < 7; $i++) { 
-                            $random = random_int(1, 60);
-                            # Não pode se repetir, tenho que ajeitar isso
-                            echo "$random -".strlen($random)."<br>";
-                            if (strlen($random) == 1) {
-                                $random = substr_replace($random, '0', 0, 0) ;
-                                echo $random."<hr>";
+                            # Algoritmo de sorteio sem números iguais
+                            $sorteio = [];
+                            $i = 0;
+                            while ($i < 6) {
+                                $sorteio[$i] = rand(1,60);
+                                $igual = 0;
+                                for ($j=0; $j<$i; $j++) {
+                                    if ($sorteio[$j] == $sorteio[$i] ) {
+                                        $igual = 1;
+                                    }
+                                }
+                                if ($igual == 0) {
+                                    $i++;
+                                }
                             }
-
-                            array_push($arrayRand, $random);
                             
-                            $resultado = "$resultado, ".$random;
-                        }
-                        $arrayUnico = $arrayRand;
-                        echo "<pre>";
-                        print_r($arrayRand);
-                        echo "</pre>";
 
-                        echo "<pre>";
-                        print_r($arrayUnico);
-                        echo "</pre>";
-                        $resultado = substr($resultado, 1);
+                            # Estilizando a apresentação do Resultado
+                            sort($sorteio);
+                            $resultado = "";
+                            for ($i=0; $i<6; $i++) {
+                                if (strlen($sorteio[$i]) == 1) {
+                                    $sorteio[$i] = substr_replace($sorteio[$i], '0', 0, 0) ;
+                                }
+                                $resultado = "$resultado, ".$sorteio[$i];
+                            }
+                            $resultado = substr($resultado, 1);
+                     
                     ?>
                      <div class="card border border-success rounded-4 mt-2 text-center">
                         <div class="card-body">
                             <h2>As Seis dezenas sorteadas foram:</h2>
-                            <h4><strong><?= $resultado ?></strong></h4>
-                            
+                            <h4><strong><?= $resultado ?></strong></h4>        
                         </div>
                     </div>
                     <?php
