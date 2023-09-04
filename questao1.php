@@ -82,16 +82,16 @@
                             } 
 
                             if ($operacao == "soma") {
-                                $operacao = "+";
+                                $operacao = "&#43;";
                                 $resultado = $n1+$n2;
                             } elseif ($operacao == "subtração") {
-                                $operacao = "-";
+                                $operacao = "&#8722;";
                                 $resultado = $n1-$n2;
                             } elseif ($operacao == "multiplicação") {
-                                $operacao = "*";
+                                $operacao = "&#215;";
                                 $resultado = $n1 * $n2;
                             } elseif ($operacao == "divisão") {
-                                $operacao = "/";
+                                $operacao = "&#247;";
                                 $resultado = $n1/$n2;
                                 $resultado = number_format($resultado,2,",",".");
                             } else {

@@ -43,7 +43,6 @@
                                     $i++;
                                 }
                             }
-                            
 
                             # Estilizando a apresentação do Resultado
                             sort($sorteio);
