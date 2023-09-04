@@ -91,9 +91,13 @@
                                 $operacao = "&#215;";
                                 $resultado = $n1 * $n2;
                             } elseif ($operacao == "divisão") {
-                                $operacao = "&#247;";
-                                $resultado = $n1/$n2;
-                                $resultado = number_format($resultado,2,",",".");
+                                if ($n2 == 0) {
+                                    $resultado = '<div class="alert alert-warning" role="alert"><span class="iconify" data-icon="ic:sharp-warning"></span>Nenhum número pode ser dividido por zero!</div>';
+                                } else {
+                                    $operacao = "&#247;";
+                                    $resultado = $n1/$n2;
+                                    $resultado = number_format($resultado,2,",",".");
+                                }
                             } else {
                                 $resultado = '<div class="alert alert-danger" role="alert"><span class="iconify" data-icon="ic:sharp-warning"></span> Informe uma Operação!</div>';
                             }
