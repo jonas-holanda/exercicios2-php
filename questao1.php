@@ -21,12 +21,6 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="n2" class="col-sm-2 col-form-label"><strong>Segundo Número:</strong></label>
-                                <div class="col-sm-10">
-                                <input type="number" step="0.01" class="form-control border-primary" id="n2" name="n2" required>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
                                 <label for="operacao" class="col-sm-2 col-form-label"><strong>Operação:</strong></label>
                                 <div class="col-sm-10">
                                     <select class="form-select border-primary" id="operacao" name="operacao">
@@ -36,6 +30,12 @@
                                         <option value="multiplicação">Multiplicação</option>
                                         <option value="divisão">Divisão</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="n2" class="col-sm-2 col-form-label"><strong>Segundo Número:</strong></label>
+                                <div class="col-sm-10">
+                                <input type="number" step="0.01" class="form-control border-primary" id="n2" name="n2" required>
                                 </div>
                             </div>
                             <fieldset class="row mb-3">
