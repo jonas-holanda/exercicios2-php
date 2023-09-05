@@ -44,8 +44,10 @@
                             while ($n1 > 0) {
                                 if ($controle > 10 && $controle < 20) {
                                     echo str_repeat("⤡ <strong>$n1</strong> ⤢", $n1/2+1)."<br>";
-                                }elseif($controle >19) {
+                                }elseif($controle > 19 && $controle <= 100) {
                                     echo "<strong>".str_pad($n1, $n1, "_", STR_PAD_BOTH)."</strong><br>";
+                                }elseif ($controle > 100) {
+                                    echo "<strong>$n1</strong><br>";
                                 }else {
                                     echo str_repeat("⤡ <strong>$n1</strong> ⤢", $n1)."<br>";
                                     
